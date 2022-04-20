@@ -13,7 +13,8 @@ get_udid_and_name() {
         for udid in $UDID 
         do 
             DEVICENAME=$($IDEVICE_NAME -u "$udid")
-            for devicename in "$DEVICENAME"
+            IFS=""
+            for devicename in $DEVICENAME
             do
                 printf "iOS Device Name: $devicename\nUDID: $udid\n"
             done
